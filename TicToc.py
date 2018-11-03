@@ -92,6 +92,8 @@ def main():
         player_move(cell, done_cell, game_field, not_done_cell)
         print_field(game_field)
         run =  win_or_not(run, game_field, done_cell)
+        if (run == False):
+            break
         computer_move(not_done_cell, game_field, done_cell)
         print_field(game_field)
         run = win_or_not(run, game_field, done_cell)
