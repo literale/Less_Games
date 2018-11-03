@@ -27,12 +27,37 @@ def print_card(card, message):
     print(line_two)
     print(line_three)
 
+def close_cell(bar, player_card, computer_card):
+    for i in range (3):
+        for j in range (5):
+            if player_card[i][j] == bar:
+                player_card[i][j] == 0
+            if computer_card[i][j] == bar:
+                computer_card[i][j] == 0
+
+
+
 def main():
     bag = [i for i in range(1,91)]
     player_card = create_card(bag)
     computer_card = create_card(bag)
     print_card(player_card, "Карта игрока: ")
     print_card(computer_card, "Карта компьютера: ")
+    run = True
+    i = 0
+    while run and i < 10:
+        bar = random.choice(bag)
+        bag.remove(bar)
+        print(bar)
+        i+=1
+        for i in range(3):
+            for j in range(5):
+                if player_card[i][j] == bar:
+                    player_card[i][j] = 0
+                if computer_card[i][j] == bar:
+                    computer_card[i][j] = 0
+        print_card(player_card, "Карта игрока: ")
+        print_card(computer_card, "Карта компьютера: ")
 
 
 if __name__ == '__main__':
