@@ -18,10 +18,21 @@ def create_card(bag):
     card = [line_one, line_two, line_three]
     return card
 
+def print_card(card, message):
+    print(message)
+    line_one = "".join(str(card[0][0:5]))
+    line_two = "".join(str(card[1][0:5]))
+    line_three = "".join(str(card[2][0:5]))
+    print(line_one)
+    print(line_two)
+    print(line_three)
+
 def main():
     bag = [i for i in range(1,91)]
     player_card = create_card(bag)
     computer_card = create_card(bag)
+    print_card(player_card, "Карта игрока: ")
+    print_card(computer_card, "Карта компьютера: ")
 
 
 if __name__ == '__main__':
