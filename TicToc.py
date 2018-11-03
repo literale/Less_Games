@@ -36,7 +36,7 @@ def computer_move(not_done_cell, game_field, done_cell):
     game_field[cell] = "_x_"
 
 def win_or_not(run, game_field, done_cell):
-    for i in range (0,6,3):
+    for i in range (0,7,3):
         if game_field[i] == game_field[i+1] and game_field[i+1]== game_field[i+2]:
             run = False
             if game_field[i] == "_o_":
