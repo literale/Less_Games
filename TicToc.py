@@ -36,7 +36,7 @@ def computer_move(not_done_cell, game_field, done_cell):
     game_field[cell] = "_x_"
 
 def win_or_not(run, game_field, done_cell):
-    for i in range (3):
+    for i in range (0,6,3):
         if game_field[i] == game_field[i+1] and game_field[i+1]== game_field[i+2]:
             run = False
             if game_field[i] == "_o_":
@@ -57,13 +57,13 @@ def win_or_not(run, game_field, done_cell):
             print("Вы победили!")
         else: print("Компьютер победил!")
 
-    if game_field[2] == game_field[4] and game_field[4] == game_field[6]:
+    elif game_field[2] == game_field[4] and game_field[4] == game_field[6]:
         run = False
         if  game_field[2] == "_o_":
             print("Вы победили!")
         else: print("Компьютер победил!")
 
-    if(len(done_cell)==9) and run == True:
+    elif(len(done_cell)==9) and run == True:
         run = False
         print("Ничья!")
     return run
