@@ -36,6 +36,15 @@ def close_cell(bar, player_card, computer_card):
                 computer_card[i][j] == 0
 
 
+def win_or_not(player_card, computer_card, run):
+    for i in range (3):
+        if sum(player_card[i])== 0:
+            print("Вы победили!")
+            run = False
+        if sum(computer_card[i])== 0:
+            print("Вы проиграли!")
+            run = False
+    return  run
 
 def main():
     bag = [i for i in range(1,91)]
@@ -44,12 +53,10 @@ def main():
     print_card(player_card, "Карта игрока: ")
     print_card(computer_card, "Карта компьютера: ")
     run = True
-    i = 0
-    while run and i < 10:
+    while run :
         bar = random.choice(bag)
         bag.remove(bar)
         print(bar)
-        i+=1
         for i in range(3):
             for j in range(5):
                 if player_card[i][j] == bar:
@@ -58,6 +65,7 @@ def main():
                     computer_card[i][j] = 0
         print_card(player_card, "Карта игрока: ")
         print_card(computer_card, "Карта компьютера: ")
+        run = win_or_not(player_card, computer_card, run)
 
 
 if __name__ == '__main__':
