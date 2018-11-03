@@ -26,61 +26,53 @@ def computer_move(not_done_cell, game_field, done_cell):
     game_field[cell] = "_x_"
 
 def win_or_not(run, game_field, done_cell):
-    if game_field[0] == "_x_" and game_field[1] == "_x_" and game_field[2] == "_x_":
-        print("Компьютер победил!")
+    if game_field[0] == game_field[1] and game_field[1] == game_field[2]:
         run = False
-    if game_field[0] == "_o_" and game_field[1] == "_o_" and game_field[2] == "_o_":
-        print("Вы победили!")
-        run = False
+        if  game_field[0] == "_o_":
+            print("Вы победили!")
+        else: print("Компьютер победил!")
 
-    if game_field[3] == "_x_" and game_field[4] == "_x_" and game_field[5] == "_x_":
-        print("Компьютер победил!")
+    if game_field[3] == game_field[4] and game_field[4] == game_field[5]:
         run = False
-    if game_field[3] == "_o_" and game_field[4] == "_o_" and game_field[5] == "_o_":
-        print("Вы победили!")
-        run = False
+        if  game_field[3] == "_o_":
+            print("Вы победили!")
+        else: print("Компьютер победил!")
 
-    if game_field[6] == "_x_" and game_field[7] == "_x_" and game_field[8] == "_x_":
-        print("Компьютер победил!")
+    if game_field[6] == game_field[7] and game_field[7] == game_field[8]:
         run = False
-    if game_field[6] == "_o_" and game_field[7] == "_o_" and game_field[8] == "_o_":
-        print("Вы победили!")
-        run = False
+        if  game_field[6] == "_o_":
+            print("Вы победили!")
+        else: print("Компьютер победил!")
 
-    if game_field[0] == "_x_" and game_field[3] == "_x_" and game_field[6] == "_x_":
-        print("Компьютер победил!")
+    if game_field[0] == game_field[3] and game_field[3] == game_field[6]:
         run = False
-    if game_field[0] == "_o_" and game_field[3] == "_o_" and game_field[6] == "_o_":
-        print("Вы победили!")
-        run = False
+        if  game_field[3] == "_o_":
+            print("Вы победили!")
+        else: print("Компьютер победил!")
 
-    if game_field[1] == "_x_" and game_field[4] == "_x_" and game_field[7] == "_x_":
-        print("Компьютер победил!")
+    if game_field[1] == game_field[4] and game_field[4] == game_field[7]:
         run = False
-    if game_field[1] == "_o_" and game_field[4] == "_o_" and game_field[7] == "_o_":
-        print("Вы победили!")
-        run = False
+        if  game_field[1] == "_o_":
+            print("Вы победили!")
+        else: print("Компьютер победил!")
 
-    if game_field[2] == "_x_" and game_field[5] == "_x_" and game_field[8] == "_x_":
-        print("Компьютер победил!")
+    if game_field[2] == game_field[5] and  game_field[5] == game_field[8]:
         run = False
-    if game_field[2] == "_o_" and game_field[5] == "_o_" and game_field[8] == "_o_":
-        print("Вы победили!")
-        run = False
+        if  game_field[2] == "_o_":
+            print("Вы победили!")
+        else: print("Компьютер победил!")
 
-    if game_field[0] == "_x_" and game_field[4] == "_x_" and game_field[8] == "_x_":
-        print("Компьютер победил!")
+    if game_field[0] == game_field[4] and game_field[4] == game_field[8]:
         run = False
-    if game_field[0] == "_o_" and game_field[4] == "_o_" and game_field[8] == "_o_":
-        print("Вы победили!")
-        run = False
+        if  game_field[0] == "_o_":
+            print("Вы победили!")
+        else: print("Компьютер победил!")
 
-    if game_field[2] == "_x_" and game_field[4] == "_x_" and game_field[6] == "_x_":
-        print("Компьютер победил!")
+    if game_field[2] == game_field[4] and game_field[4] == game_field[6]:
         run = False
-    if game_field[2] == "_o_" and game_field[4] == "_o_" and game_field[6] == "_o_":
-        print("Вы победили!")
-        run = False
+        if  game_field[2] == "_o_":
+            print("Вы победили!")
+        else: print("Компьютер победил!")
 
     if(len(done_cell)==9) and run == True:
         run = False
