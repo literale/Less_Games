@@ -114,12 +114,10 @@ def main():
             stop = True
             if answer == "y":
                 answer_not_ex = False
-                stop = True
-                stop = close_cell(bar, player_card, computer_card, stop)
+                stop = close_cell(bar, player_card, computer_card, stop=True)
             elif answer == "n":
                 answer_not_ex = False
-                stop = False
-                stop = close_cell(bar, player_card, computer_card, stop)
+                stop = close_cell(bar, player_card, computer_card, stop=False)
 
         print_card(player_card, "Карта игрока: ")
         print_card(computer_card, "Карта компьютера: ")
