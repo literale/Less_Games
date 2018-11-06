@@ -76,13 +76,16 @@ def print_card(card, message):
     print(line_two)
     print(line_three)
 
-def close_cell(bar, player_card, computer_card):
-    for i in range (3):
-        for j in range (5):
+def close_cell(bar, player_card, computer_card, stop):
+    for i in range(3):
+        for j in range(5):
             if player_card[i][j] == bar:
-                player_card[i][j] == 0
+                player_card[i][j] = 0
+                stop = bool(stop)
+                stop = not stop
             if computer_card[i][j] == bar:
-                computer_card[i][j] == 0
+                computer_card[i][j] = 0
+    return stop
 
 
 def win_or_not(player_card, computer_card, run):
@@ -112,23 +115,11 @@ def main():
             if answer == "y":
                 answer_not_ex = False
                 stop = True
-                for i in range(3):
-                    for j in range(5):
-                        if player_card[i][j] == bar:
-                            player_card[i][j] = 0
-                            stop = False
-                        if computer_card[i][j] == bar:
-                            computer_card[i][j] = 0
+                stop = close_cell(bar, player_card, computer_card, stop)
             elif answer == "n":
                 answer_not_ex = False
                 stop = False
-                for i in range(3):
-                    for j in range(5):
-                        if player_card[i][j] == bar:
-                            player_card[i][j] = 0
-                            stop = True
-                        if computer_card[i][j] == bar:
-                            computer_card[i][j] = 0
+                stop = close_cell(bar, player_card, computer_card, stop)
 
         print_card(player_card, "Карта игрока: ")
         print_card(computer_card, "Карта компьютера: ")
